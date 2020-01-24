@@ -1,0 +1,12 @@
+line-height: 45px;
+.Brand_Panel {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.38);
+  position: absolute;
+  left: 0px;
+  top: 711px;
+  width: 1400px;
+  height: 105px;
+  z-index: 169;
+}
+

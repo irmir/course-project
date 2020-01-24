@@ -1,0 +1,275 @@
+body {
+	font-family: 'Raleway', sans-serif;
+	color: @colorFont;
+}
+.main-screen {
+	background: url(../img/background-main-screen.jpg) no-repeat center;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		.size100;
+		background: @colorBgMain;
+		z-index: 0;
+	}
+}
+.wrapper-vh {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: calc(100vh - 100px);
+	position: relative;
+	z-index: 1;
+}
+main {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 916px;
+	box-sizing: border-box;
+	.btn {
+		margin-top: 80px;
+		text-align: center;
+		padding: 17px 50px;
+	}
+}
+.caption {
+	color: @white;
+	font-size: 65px;
+	font-family: @openSans;
+	line-height: 1;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.text-caption {
+	font-size: 22px;
+	line-height: 1.5;
+	padding-top: 42px;
+	color: @white;
+}
+.features {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 83px;
+	padding-bottom: 88px;
+}
+.item-features {
+	.width33;
+	padding: 37px 45px;
+	text-align: center;
+	img {
+		margin-bottom: 22px;
+	}
+	.subtitle {
+		color: #2d3033;
+	}
+}
+.subtitle {
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 24px;
+	text-transform: uppercase;
+	color: @white;
+}
+.text {
+	font-size: 14px;
+	line-height: 1.5;
+}
+.works {
+	display: flex;
+	flex-wrap: wrap;
+}
+.item-works {
+	position: relative;
+	display: flex;
+	width: 25%;
+	height: 350px;
+	&::after {
+		content: '';
+		width: 2px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		background: @white;
+		right: 0px;
+	}
+	&::before {
+		content: '';
+		height: 2px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		background: @white;
+		left: 0px;
+	}
+	img {
+		.size100;
+		object-fit: cover;
+	}
+	&:hover {
+		.item-works-bg, .item-works-bg:after {
+			display: flex;
+		}
+	}
+	&-bg {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 0 20px;
+		box-sizing: border-box;
+		.size100;
+		background-color: rgba(@red, 0.9);
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		cursor: pointer;
+		color: @white;
+		&::after {
+			content: '';
+			height: 2px;
+			width: 100%;
+			position: absolute;
+			bottom: 0;
+			background: @white;
+			left: 0px;
+			display: none;
+		}
+		.subtitle {
+			margin-bottom: 12px;
+		}
+	}
+}
+.team {
+	padding-top: 100px;
+	padding-bottom: 100px;
+	display: flex;
+	margin: 0 -1.7%;
+}
+.item-team {
+	width: 25%;
+	box-sizing: border-box;
+	padding: 0 1.7%;
+	.wrapper-img {
+		height: 265px;
+		margin-bottom: 28px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+.name {
+	font-size: 22px;
+	color: #2d3033;
+	margin-bottom: 12px;
+}
+.role {
+	font-size: 13px;
+	color: @red;
+	text-transform: uppercase;
+	margin-bottom: 28px;
+}
+.social-block {
+	display: flex;
+	padding-top: 30px;
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 40px;
+		height: 40px;
+		margin-right: 2px;
+		border: 1px solid @colorBorder;
+		text-align: center;
+		box-sizing: border-box;
+		&:hover {
+			border: 1px solid rgba(@red, 0.5);
+			cursor: pointer;
+			transition: @transition;
+			.svg path {
+				fill: rgba(@red, 0.5);
+				text-anchor:middle;
+				transition: @transition;
+			}
+		}
+	}
+}
+.svg path {
+	fill: #c6cacc;
+}
+.slider {
+	display: flex;
+	min-height: 500px;
+	&-photo {
+		width: 50%;
+		img {
+			.size100;
+			object-fit: cover;
+			object-position: right;
+		}
+	}
+	&-text {
+		width: 50%;
+		background: #53354a;
+		color: @white;
+	}
+}
+.wrapper {
+	max-width: 505px;
+	padding: 105px 20px 100px 80px;
+}
+.paragraph {
+	color: @white;
+	font-family: 'Cardo', serif;
+	font-style: italic;
+	font-size: 36px;
+	margin-bottom: 32px;
+}
+.author {
+	margin-bottom: 58px;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.switch {
+	width: 12px;
+	height: 12px;
+	background: @bgSwitch;
+	border-radius: 50%;
+	margin-right: 8px;
+	&:hover {
+		background: @white;
+		transition: @transition;
+	}
+	&-group {
+		display: flex;
+		justify-content: center;
+	}
+}
+.call-to-action {
+	padding-top: 94px;
+	padding-bottom: 100px;
+	text-align: center;
+	.btn {
+		padding: 17px 84px;
+		&:hover {
+			border: 1px solid @red;
+			transition: @transition;
+		}
+	}
+}
+.cta-title {
+	font-size: 28px;
+	font-weight: 400;
+	margin-bottom: 20px;
+	&-subtitle {
+		margin-bottom: 40px;
+	}
+}
