@@ -47,24 +47,43 @@
 	animation-fill-mode: forwards;
 }
 
-.right-arrow {
-     position: absolute;
-     right: 0;
-     top: 50%;
-     background: rgba(0,0,0,0.5);
-     width: 35px;
-     height: 35px;
-     margin-top: -16px;
-}
-.left-arrow {
+.left-arrow, .right-arrow {
     position: absolute;
-    left: 0;
     top: 50%;
-    background: rgba(0,0,0,0.5);
-    width: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 25px;
     height: 35px;
     margin-top: -16px;
+    opacity: 0.4;
+    &:hover {
+        opacity: 1;
+        transition: 0.3s;
+    }
+    &::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid #ffffff;
+        border-right: 2px solid #ffffff;
+        position: absolute;
+        top: 9px;
+        }
 }
+.right-arrow {
+    right: 0;
+    &:before {
+        transform: rotate(45deg);
+        left: 2px;
+    }
+}
+.left-arrow {
+    left: 0;
+    &::before {
+        transform: rotate(-135deg);
+        left: 7px;
+    }
+}
+
 .button-close {
     position: absolute;
     right: 0;;
