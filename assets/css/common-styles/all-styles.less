@@ -144,6 +144,34 @@ body {
 		}
 	}
 }
+.active-item-works {
+	// position: relative;
+    display: block;
+    width: 100%;
+	height: 100%;
+	&::after {
+		all: unset;
+	}
+	&::before {
+		all: unset;
+	}
+	&-bg {
+			position: absolute;
+			bottom: 0;
+			background: rgba(0,0,0,0.8);
+			display: flex;
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+	}
+	.subtitle {
+		padding: 0 15px;
+	}
+	.text {
+		line-height: 30px;
+		color: #ffffff;
+	}
+}
 .team {
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -221,32 +249,66 @@ body {
 		color: @white;
 	}
 }
+.slide.first-slide{
+	display: block;
+	transition: opacity 0.3s, visibility 0s linear 0.3s;
+}
+.slide {
+	display: none;
+}
+
 .wrapper {
 	max-width: 505px;
 	padding: 105px 20px 100px 80px;
 }
+
 .paragraph {
 	color: @white;
 	font-family: 'Cardo', serif;
 	font-style: italic;
 	font-size: 36px;
 	margin-bottom: 32px;
+	transition: opacity 1s;
+	// transition-property: height;
+	// transition-duration: 1s;
+	// opacity: 1;
+	// transition: 0.3s;
+	// animation-name: test;
+	// animation-duration: 1s;
 }
+
 .author {
 	margin-bottom: 58px;
 	font-size: 13px;
 	font-weight: 700;
 	text-transform: uppercase;
 }
+
+// a:link { color: red; }
+// a:visited { color: grey; }
+// a:hover { color: blue; }
+// a:active { background-color: yellow; }
+
+
 .switch {
 	width: 12px;
 	height: 12px;
 	background: @bgSwitch;
 	border-radius: 50%;
 	margin-right: 8px;
+	&:link {
+		background-color: @bgSwitch;
+	}
+	&:visited {
+		background-color: @bgSwitch;
+	}
 	&:hover {
-		background: @white;
+		background-color: @white;
 		transition: @transition;
+		cursor: pointer;
+	}
+	&:active {
+		background-color: @white;
 	}
 	&-group {
 		display: flex;

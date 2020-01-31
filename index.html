@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:300,400,600,700|Raleway:300,400,600,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Cardo:400i|Open+Sans:300,400,600,700|Raleway:300,400,600,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -15,7 +17,7 @@
             <div class="header clearfix">
                 <img src="assets/img/logo-min.png" alt="" class="logo">
                 <nav class="navigation">
-                    <ul>
+                    <ul id="menu">
                         <li><a href="#features">Features</a></li>
                         <li><a href="#works">Works</a></li>
                         <li><a href="#our-team">Our Team</a></li>
@@ -85,62 +87,64 @@
         </div>
     </section>
     <section id="works" class="works">
-        <a href="#" class="item-works">
-            <img src="assets/img/works1.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works2.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works1.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works4.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works5.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works6.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works7.jpg" alt="">
-            <div class="item-works-bg">
-                <h3 class="subtitle">Project Name</h3>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
-        <a href="#" class="item-works">
-            <img src="assets/img/works8.jpg" alt="">
-            <div class="item-works-bg">
-                <h4 class="subtitle">Project Name</h4>
-                <p class="text">User Interface Design</p>
-            </div>
-        </a>
+       
+            <figure class="item-works">
+                <img src="assets/img/works1.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works2.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works1.jpg" alt="">
+                <div class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </div>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works4.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works5.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works6.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works7.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h3 class="subtitle">Project Name</h3>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+            <figure class="item-works">
+                <img src="assets/img/works8.jpg" alt="">
+                <figcaption class="item-works-bg">
+                    <h4 class="subtitle">Project Name</h4>
+                    <p class="text">User Interface Design</p>
+                </figcaption>
+            </figure>
+        
     </section>
     <section id="our-team">
         <div class="container">
@@ -154,32 +158,32 @@
                     <p class="text">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
                         fermentum massa justo sit amet risus. Maecenas sed diam eget risus varius blandit sit amet non
                         magna. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-                    <div class="social-block padding">
-                        <a href="#">
+                    <ul class="social-block padding">
+                        <li>
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="8" height="18"
                                 viewBox="0 0 8 18">
                                 <path class="cls-1"
                                     d="M689,2800.83h-2.724v-1.87a0.75,0.75,0,0,1,.757-0.87h1.923v-3.08l-2.648-.01c-2.939,0-3.608,2.3-3.608,3.77v2.06H681v3.18h1.7V2813h3.576v-8.99h2.412Z"
                                     transform="translate(-681 -2795)" />
                             </svg>
-                        </a>
-                        <a href="#">
+                        </li>
+                        <li>
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="20" height="18"
                                 viewBox="0 0 20 13.81">
                                 <path class="cls-1"
                                     d="M735,2799.28a0.1,0.1,0,0,1-.038-0.03,3.636,3.636,0,0,0-2.637-.94l-0.031-.07h0.019a3.2,3.2,0,0,0,1.62-.63,0.2,0.2,0,0,0-.211-0.3,5.85,5.85,0,0,0-1.266.29q0.72-.435.561-0.6a2.523,2.523,0,0,0-1.521.69,0.753,0.753,0,0,0,.224-0.52,3.959,3.959,0,0,0-.673.53,10.371,10.371,0,0,0-.979,1.19l-0.012.03a10.225,10.225,0,0,0-1.36,2.98l-0.1.07-0.019.02a4.98,4.98,0,0,0-1.4-1.15,17.009,17.009,0,0,0-2.308-1.16,19.886,19.886,0,0,0-2.936-1.16,2.763,2.763,0,0,0,1.615,2.49v0.02a3.411,3.411,0,0,0-1.1.15q0.1,1.455,2.182,2.01l-0.006.02a1.638,1.638,0,0,0-1.34.52,2.431,2.431,0,0,0,2.425,1.21,1.575,1.575,0,0,0-.53.37,0.737,0.737,0,0,0-.212.74,1.353,1.353,0,0,0,1.359.6h0l0.038,0.04c-0.007.01-.013,0.01-0.019,0.02a5.213,5.213,0,0,1-4.134,1.51l-0.025.01a5.372,5.372,0,0,1-3.179-1.34,9.782,9.782,0,0,0,4.551,3.39,11.389,11.389,0,0,0,6.465.14h0.038a10.2,10.2,0,0,0,5.317-3.5,6.889,6.889,0,0,0,1.266-2.66,2.665,2.665,0,0,0,2.363-.89l-0.012-.02a4.94,4.94,0,0,1-2.126-.12v-0.11h0.006c1.154-.12,1.833-0.47,2.051-1.06a3.371,3.371,0,0,1-2.382.03A4.77,4.77,0,0,0,735,2799.28Z"
                                     transform="translate(-719 -2797)" />
                             </svg>
-                        </a>
-                        <a href="#">
+                        </li>
+                        <li>
                             <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="18"
                                 viewBox="0 0 16 16">
                                 <path class="cls-1"
                                     d="M773.6,2803.22v-0.03l-0.016.03H773.6Zm6.213-7.22H766.182a1.163,1.163,0,0,0-1.182,1.15v13.7a1.163,1.163,0,0,0,1.182,1.15h13.635a1.163,1.163,0,0,0,1.183-1.15v-13.7A1.163,1.163,0,0,0,779.817,2796Zm-9.967,13.39h-2.417v-7.22h2.417v7.22Zm-1.208-8.21h-0.016A1.381,1.381,0,1,1,768.642,2801.18Zm9.922,8.21h-2.417v-3.86c0-.97-0.349-1.64-1.224-1.64a1.326,1.326,0,0,0-1.24.88,1.661,1.661,0,0,0-.079.59v4.03h-2.417s0.032-6.54,0-7.22H773.6v1.02a2.4,2.4,0,0,1,2.178-1.19c1.59,0,2.782,1.03,2.782,3.25v4.14Z"
                                     transform="translate(-765 -2796)" />
                             </svg>
-                        </a>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="item-team">
                     <div class="wrapper-img">
@@ -298,20 +302,45 @@
                 <img src="assets/img/slider-photo.jpg" alt="">
             </div>
             <div class="slider-text">
-                <div class="wrapper">
-                    <div class="paragraph">
-                        “Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean
-                        eu leo quam...”
+                <div class="wrapper" id="wrapper">
+                    <div class="slide first-slide" data-id="1">
+                        <div class="paragraph">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                            Donec sed odio dui. Aenean eu leo quam...”
+                        </div>
+                        <div class="author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
                     </div>
-                    <div class="author">
-                        Susan Sims, Interaction Designer at XYZ
+                    <div class="slide" data-id="2">
+                        <div class="paragraph">“Lorem Ipsum is simply dummy text of the printing and typesetting
+                            industry. Lorem Ipsum is simply dummy text ”
+                        </div>
+                        <div class="author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
                     </div>
-                    <div class="switch-group">
-                        <div class="switch"></div>
-                        <div class="switch"></div>
-                        <div class="switch"></div>
-                        <div class="switch"></div>
-                        <div class="switch"></div>
+                    <div class="slide" data-id="3">
+                        <div class="paragraph">“Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s. Lorem Ipsum is simply”
+                        </div>
+                        <div class="author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
+                    <div class="slide" data-id="4">
+                        <div class="paragraph">“Many desktop publishing packages and web page editors now use Lorem
+                            Ipsum as their default model text...”
+                        </div>
+                        <div class="author">
+                            Susan Sims, Interaction Designer at XYZ
+                        </div>
+                    </div>
+                    <div class="switch-group" id="switch-group">
+                        <div class="switch" data-id="1"></div>
+                        <div class="switch" data-id="2"></div>
+                        <div class="switch" data-id="3"></div>
+                        <div class="switch" data-id="4"></div>
+
                     </div>
                 </div>
             </div>
@@ -384,6 +413,10 @@
             <p>Made with <span>&#9829;</span> <span>by Kamal Chaneman</span></p>
         </div>
     </footer>
+    <!-- <div class="pop-up">
+
+    </div> -->
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
