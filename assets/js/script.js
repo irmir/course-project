@@ -68,26 +68,25 @@ const getCoordTop = function (elem) {
     return top;
 };
 
-//всплывающее окно в секции с работами
+//слайдер с работами
 
 document.getElementById('works').addEventListener('click', showPopUp, false);
-// const images = 
 
 function showPopUp() {
 
     if (!event.target.classList.contains('item-works-bg')) {
         return
     };
-    // event.target.dataset.id
+
+    const figures = document.getElementsByClassName('item-works');
     const figure = event.target.parentElement;
 
     const background = document.createElement('div');
-    background.addEventListener('click', closePopUp);
 
     const popUp = background.appendChild(document.createElement('div'));
     popUp.classList.add('pop-up');
 
-    const clone = figure.cloneNode(true);
+    let clone = figure.cloneNode(true);
     clone.lastElementChild.classList.remove('item-works-bg');
     clone.lastElementChild.classList.add('active-item-works-bg');
     clone.classList.add('active-item-works');
@@ -96,7 +95,7 @@ function showPopUp() {
     buttClose.classList.add('button-close');
     buttClose.addEventListener('click', closePopUp);
 
-    const rightArrow  = clone.appendChild(document.createElement('button'));
+    const rightArrow = clone.appendChild(document.createElement('button'));
     rightArrow.classList.add('right-arrow');
     rightArrow.addEventListener('click', slideForward);
 
@@ -104,12 +103,7 @@ function showPopUp() {
     leftArrow.classList.add('left-arrow');
     leftArrow.addEventListener('click', slideBack)
 
-
     popUp.appendChild(clone);
-    // const src = event.target.previousElementSibling.src
-    // const img = popUp.appendChild(document.createElement('img'));
-    // img.src = src;
-
 
     document.body.appendChild(background);
     background.classList.add('background', 'active-background');
@@ -123,16 +117,29 @@ function showPopUp() {
         background.parentNode.removeChild(background);
     }
 
+    let idFirstElementSlide = +clone.dataset.id;
+
     function slideForward() {
-        
+
+        if (idFirstElementSlide < figures.length - 2) {
+            clone.firstElementChild.src = figures[idFirstElementSlide + 1].firstElementChild.src;
+            clone.children[1].firstElementChild.innerText = figures[idFirstElementSlide + 1].children[1].firstElementChild.innerText;
+            clone.children[1].lastElementChild.innerText = figures[idFirstElementSlide + 1].children[1].lastElementChild.innerText;
+            idFirstElementSlide++;
+        }
     }
 
     function slideBack() {
 
+        if (idFirstElementSlide < figures.length - 1) {
+            clone.firstElementChild.src = figures[idFirstElementSlide - 1].firstElementChild.src;
+            clone.children[1].firstElementChild.innerText = figures[idFirstElementSlide - 1].children[1].firstElementChild.innerText;
+            clone.children[1].lastElementChild.innerText = figures[idFirstElementSlide - 1].children[1].lastElementChild.innerText;
+            idFirstElementSlide--;
+        }
     }
+
 }
-
-
 
 
 

@@ -1,0 +1,113 @@
+@keyframes appearanceBackground {
+  0% {
+    background-color: initial;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes animateOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.pop-up {
+  position: relative;
+  width: 60%;
+  height: auto;
+  top: 10%;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #ffffff;
+}
+.button-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.active-pop-up {
+  animation: animateOpacity 0.5s;
+  animation-fill-mode: forwards;
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 199;
+}
+.active-background {
+  animation: appearanceBackground 0.5s;
+  animation-fill-mode: forwards;
+}
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  width: 25px;
+  height: 35px;
+  margin-top: -16px;
+  opacity: 0.4;
+}
+.left-arrow:hover,
+.right-arrow:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+.left-arrow::before,
+.right-arrow::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  position: absolute;
+  top: 9px;
+}
+.right-arrow {
+  right: 0;
+}
+.right-arrow:before {
+  transform: rotate(45deg);
+  left: 2px;
+}
+.left-arrow {
+  left: 0;
+}
+.left-arrow::before {
+  transform: rotate(-135deg);
+  left: 7px;
+}
+.button-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 35px;
+  height: 35px;
+  opacity: 0.4;
+}
+.button-close:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
+.button-close::before,
+.button-close::after {
+  position: absolute;
+  left: 17px;
+  top: 2px;
+  content: ' ';
+  height: 30px;
+  width: 2px;
+  background-color: #ffffff;
+}
+.button-close::before {
+  transform: rotate(45deg);
+}
+.button-close::after {
+  transform: rotate(-45deg);
+}
