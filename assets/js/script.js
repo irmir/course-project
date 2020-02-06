@@ -1,45 +1,5 @@
 
-const wrapper = document.getElementById('wrapper');
-
-const text = wrapper.firstElementChild.firstElementChild.innerText;
-
-const slides = document.getElementsByClassName('slide');
-
-const switchGroop = document.getElementById('switch-group');
-switchGroop.addEventListener('click', changeText);
-const switches = switchGroop.children;
-
-function changeText(event) {
-    if (!event.target.classList.contains('switch')) {
-        return;
-    }
-    for (let item of switchGroop.children) {
-        item.style.background = '#755d6e';
-    }
-    event.target.style.background = '#fff';
-
-    const slide = Array.from(slides).filter(element => {
-        return element.dataset.id === event.target.dataset.id;
-    });
-
-    const changingText = wrapper.firstElementChild.firstElementChild;
-
-    changingText.style.opacity = "0";
-
-    changingText.addEventListener("transitionend", emersion, false);
-
-    function emersion() {
-        if (slide[0].dataset.id === "1") {
-            changingText.innerText = text;
-        } else {
-            changingText.innerText = slide[0].firstElementChild.innerText;
-        }
-        changingText.style.opacity = "1";
-
-    }
-}
-
-//плавный скролл до выбранной секции
+//smooth scroll to the selected section
 
 document.getElementById('menu').addEventListener('click', scrollPage)
 
@@ -52,7 +12,7 @@ function scrollPage() {
 
     let currentTop = scrollY;
     if (currentTop < getCoordTop(elem)) {
-        let t = 2;
+        let t = 0;
         for (let i = currentTop; i <= getCoordTop(elem); i += 10) {
             t += 10;
             setTimeout(function () {
@@ -68,7 +28,7 @@ const getCoordTop = function (elem) {
     return top;
 };
 
-//слайдер с работами
+//work slider
 
 document.getElementById('works').addEventListener('click', showPopUp, false);
 
@@ -138,7 +98,47 @@ function showPopUp() {
             idFirstElementSlide--;
         }
     }
+}
 
+//fading and appearing text
+
+const wrapper = document.getElementById('wrapper');
+
+const text = wrapper.firstElementChild.firstElementChild.innerText;
+
+const slides = document.getElementsByClassName('slide');
+
+const switchGroop = document.getElementById('switch-group');
+switchGroop.addEventListener('click', changeText);
+const switches = switchGroop.children;
+
+function changeText(event) {
+    if (!event.target.classList.contains('switch')) {
+        return;
+    }
+    for (let item of switchGroop.children) {
+        item.style.background = '#755d6e';
+    }
+    event.target.style.background = '#fff';
+
+    const slide = Array.from(slides).filter(element => {
+        return element.dataset.id === event.target.dataset.id;
+    });
+
+    const changingText = wrapper.firstElementChild.firstElementChild;
+
+    changingText.style.opacity = "0";
+
+    changingText.addEventListener("transitionend", emersion, false);
+
+    function emersion() {
+        if (slide[0].dataset.id === "1") {
+            changingText.innerText = text;
+        } else {
+            changingText.innerText = slide[0].firstElementChild.innerText;
+        }
+        changingText.style.opacity = "1";
+    }
 }
 
 
