@@ -2,6 +2,7 @@
 //smooth scroll to the selected section
 
 document.getElementById('menu').addEventListener('click', scrollPage)
+document.getElementById('btn-more').addEventListener('click', scrollPage)
 
 function scrollPage() {
     if (!event.target.tagName === 'A') {
@@ -11,24 +12,25 @@ function scrollPage() {
     const elem = document.getElementById(href);
 
     let currentTop = scrollY;
-    if (currentTop < getCoordTop(elem)) {
-        let t = 0;
-        for (let i = currentTop; i <= getCoordTop(elem); i += 10) {
-            t += 10;
-            setTimeout(function () {
-                window.scrollTo(0, i);
-            }, t / 1.8);
-        }
+
+    const topElem = getCoordTop(elem);
+
+    let t = 0;
+    for (let i = currentTop; i <= topElem + 10; i += 10) {
+        t += 10;
+        setTimeout(function () {
+            window.scrollTo(0, i);
+        }, t / 1.7);
     }
 }
 
-const getCoordTop = function (elem) {
+function getCoordTop(elem) {
     const coord = elem.getBoundingClientRect();
-    const top = coord.top + pageYOffset;
+    const top = coord.top;
     return top;
 };
 
-//work slider
+//slider
 
 document.getElementById('works').addEventListener('click', showPopUp, false);
 

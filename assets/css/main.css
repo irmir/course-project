@@ -497,7 +497,6 @@ button {
 .btn:hover {
   background: #fff;
   color: #e84545;
-  font-weight: bold;
   transition: 0.3s;
 }
 @keyframes appearanceBackground {
