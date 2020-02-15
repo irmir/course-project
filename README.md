@@ -1,1 +1,1 @@
-# This is a responsive training project. I have done using mostly flexbox if needed. As tried to practise my JavaScript, I put several elements written in vanilla JS, without using JQuery or other plugins. All scripts are written by myself.
+This is a responsive training project. I have done using mostly flexbox if needed. As tried to practise my JavaScript, I put several elements written in vanilla JS, without using JQuery or other plugins. All scripts are written by myself.
