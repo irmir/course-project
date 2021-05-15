@@ -1,1 +1,1 @@
-This is a responsive training project. I have done using mostly flexbox if needed. As tried to practise my JavaScript, I put several elements written in vanilla JS, without using JQuery or other plugins.
+It's a responsive landing page. Slider, smooth scroll and fading and appearing text were implemented in native JavaScript, without using JQuery or other libraries.
