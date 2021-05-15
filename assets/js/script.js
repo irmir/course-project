@@ -4,19 +4,16 @@
 document.getElementById('menu').addEventListener('click', scrollPage)
 document.getElementById('btn-more').addEventListener('click', scrollPage)
 
-function scrollPage() {
-    if (!event.target.tagName === 'A') {
-        return;
-    }
+function scrollPage(event) {
+    if (!event.target.tagName === 'A') return;
+
     const href = event.target.getAttribute('href').slice(1);
     const elem = document.getElementById(href);
-
-    let currentTop = scrollY;
 
     const topElem = getCoordTop(elem);
 
     let t = 0;
-    for (let i = currentTop; i <= topElem + 10; i += 10) {
+    for (let i = 0; i <= topElem + 10; i += 10) {
         t += 10;
         setTimeout(function () {
             window.scrollTo(0, i);
@@ -26,25 +23,21 @@ function scrollPage() {
 
 function getCoordTop(elem) {
     const coord = elem.getBoundingClientRect();
-    const top = coord.top;
-    return top;
+    return coord.top;
 };
 
 //slider
 
 document.getElementById('works').addEventListener('click', showPopUp, false);
 
-function showPopUp() {
+function showPopUp(event) {
 
-    if (!event.target.classList.contains('item-works-bg')) {
-        return
-    };
+    if (!event.target.classList.contains('item-works-bg')) return;
 
     const figures = document.getElementsByClassName('item-works');
     const figure = event.target.parentElement;
 
     const background = document.createElement('div');
-
     const popUp = background.appendChild(document.createElement('div'));
     popUp.classList.add('pop-up');
 
@@ -74,7 +67,6 @@ function showPopUp() {
 
     function closePopUp() {
         popUp.parentNode.removeChild(popUp);
-
         background.classList.remove('background');
         background.parentNode.removeChild(background);
     }
@@ -82,42 +74,43 @@ function showPopUp() {
     let idFirstElementSlide = +clone.dataset.id;
 
     function slideForward() {
-
+        leftArrow.removeAttribute('disabled')
         if (idFirstElementSlide < figures.length - 2) {
             clone.firstElementChild.src = figures[idFirstElementSlide + 1].firstElementChild.src;
             clone.children[1].firstElementChild.innerText = figures[idFirstElementSlide + 1].children[1].firstElementChild.innerText;
             clone.children[1].lastElementChild.innerText = figures[idFirstElementSlide + 1].children[1].lastElementChild.innerText;
-            idFirstElementSlide++;
-        }
+            if (idFirstElementSlide === figures.length - 3) {
+                rightArrow.setAttribute('disabled', true)
+            } else idFirstElementSlide++;
+        } 
     }
 
     function slideBack() {
-
-        if (idFirstElementSlide < figures.length - 1) {
+        rightArrow.removeAttribute('disabled')
+        if (idFirstElementSlide > 0) {
             clone.firstElementChild.src = figures[idFirstElementSlide - 1].firstElementChild.src;
             clone.children[1].firstElementChild.innerText = figures[idFirstElementSlide - 1].children[1].firstElementChild.innerText;
             clone.children[1].lastElementChild.innerText = figures[idFirstElementSlide - 1].children[1].lastElementChild.innerText;
-            idFirstElementSlide--;
-        }
+            if (idFirstElementSlide === 1) {
+                leftArrow.setAttribute('disabled', true)
+            } else idFirstElementSlide--;
+        } 
     }
 }
 
 //fading and appearing text
 
-const wrapper = document.getElementById('wrapper');
-
-const text = wrapper.firstElementChild.firstElementChild.innerText;
-
-const slides = document.getElementsByClassName('slide');
-
 const switchGroop = document.getElementById('switch-group');
 switchGroop.addEventListener('click', changeText);
-const switches = switchGroop.children;
 
 function changeText(event) {
-    if (!event.target.classList.contains('switch')) {
-        return;
-    }
+
+    const wrapper = document.getElementById('wrapper');
+    const text = wrapper.firstElementChild.firstElementChild.innerHTML;
+    const slides = document.getElementsByClassName('slide');
+
+    if (!event.target.classList.contains('switch')) return;
+    
     for (let item of switchGroop.children) {
         item.style.background = '#755d6e';
     }
@@ -126,18 +119,20 @@ function changeText(event) {
     const slide = Array.from(slides).filter(element => {
         return element.dataset.id === event.target.dataset.id;
     });
-
+    
     const changingText = wrapper.firstElementChild.firstElementChild;
 
-    changingText.style.opacity = "0";
+    changingText.style.opacity = '0';
+    changingText.style.transition = '0.5s';
 
     changingText.addEventListener("transitionend", emersion, false);
 
     function emersion() {
+        
         if (slide[0].dataset.id === "1") {
-            changingText.innerText = text;
+            changingText.innerHTML = text;
         } else {
-            changingText.innerText = slide[0].firstElementChild.innerText;
+            changingText.innerHTML = slide[0].firstElementChild.innerHTML;
         }
         changingText.style.opacity = "1";
     }

@@ -145,15 +145,14 @@ body {
 	}
 }
 .active-item-works {
-	// position: relative;
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 	height: 100%;
 	&::after {
-		all: unset;
+		width: 0px;
 	}
 	&::before {
-		all: unset;
+		height: 0;
 	}
 	&-bg {
 			position: absolute;
@@ -223,14 +222,10 @@ body {
 			transition: @transition;
 			.svg path {
 				fill: rgba(@red, 0.5);
-				text-anchor:middle;
 				transition: @transition;
 			}
 		}
 	}
-}
-.svg path {
-	fill: #c6cacc;
 }
 .slider {
 	display: flex;

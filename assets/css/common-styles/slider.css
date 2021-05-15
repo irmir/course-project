@@ -47,7 +47,9 @@
 .right-arrow {
   position: absolute;
   top: 50%;
-  background: rgba(0, 0, 0, 0.5);
+  background: red;
+  
+  /* background: rgba(0, 0, 0, 0.5); */
   width: 25px;
   height: 35px;
   margin-top: -16px;
@@ -55,7 +57,14 @@
 }
 .left-arrow:hover,
 .right-arrow:hover {
-  opacity: 1;
+  /* opacity: 1; */
+  transition: 0.3s;
+}
+.left-arrow:disabled,
+.right-arrow:disabled {
+  opacity: 0.4;
+  color: red;
+  background-color: red;
   transition: 0.3s;
 }
 .left-arrow::before,
